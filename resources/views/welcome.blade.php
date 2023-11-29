@@ -8,6 +8,14 @@
     eg:/arika
 </h4>
     <h1>Welcome, {{$name ?? "Guest"}}</h1> 
-    
+    <div>
+    <h2>ifstatement</h2>
+    @if($name==" " )
+    {{"no name"}}
+    @elseif($name=="arika")
+    {{"arika is here"}}
+    @else {{"write arika"}}
+    @endif
+    </div>
     </body> 
     </html>
