@@ -1,18 +1,18 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\DemoController;
 
-/*
-|--------------------------------------------------------------------------
-| Web Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider and all of them will
-| be assigned to the "web" middleware group. Make something great!
-|
-*/
 
-Route::get('/', function () {
-    return view('welcome');
+//Route is a class where get has to have two parameter 'url/path' and function
+
+Route::get('/{name?}', function ($name=null) {
+    $data = compact('name');
+    return view('welcome')->with($data);
 });
+
+Route::get('/demo',function(){
+    //file name 'demo'
+   return view ('demo');
+});
+
